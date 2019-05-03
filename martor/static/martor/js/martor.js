@@ -190,6 +190,7 @@
 
             // win/linux: Ctrl+B, mac: Command+B
             var markdownToBold = function(editor) {
+		console.log('markdownToBold');
                 var originalRange = editor.getSelectionRange();
                 if (editor.selection.isEmpty()) {
                     var curpos = editor.getCursorPosition();
@@ -207,6 +208,7 @@
             };
             // win/linux: Ctrl+I, mac: Command+I
             var markdownToItalic = function(editor) {
+		console.log('markdownToItalic');
                 var originalRange = editor.getSelectionRange();
                 if (editor.selection.isEmpty()) {
                     var curpos = editor.getCursorPosition();
@@ -224,6 +226,7 @@
             };
             // win/linux: Ctrl+Shift+U
             var markdownToUnderscores = function(editor) {
+		console.log('markdownToUnderscores');
                 var originalRange = editor.getSelectionRange();
                 if (editor.selection.isEmpty()) {
                     var curpos = editor.getCursorPosition();
@@ -241,6 +244,7 @@
             };
             // win/linux: Ctrl+Shift+S
             var markdownToStrikethrough = function(editor) {
+		console.log('markdownToStrikethrough');
                 var originalRange = editor.getSelectionRange();
                 if (editor.selection.isEmpty()) {
                     var curpos = editor.getCursorPosition();
@@ -258,6 +262,7 @@
             };
             // win/linux: Ctrl+H, mac: Command+H
             var markdownToHorizontal = function(editor) {
+		console.log('markdownToHorizontal');
                 var originalRange = editor.getSelectionRange();
                 if (editor.selection.isEmpty()) {
                     var curpos = editor.getCursorPosition();
@@ -278,6 +283,7 @@
             };
             // win/linux: Ctrl+Alt+1, mac: Command+Option+1
             var markdownToH1 = function(editor) {
+		console.log('markdownToH1');
                 var originalRange = editor.getSelectionRange();
                 if (editor.selection.isEmpty()) {
                     var curpos = editor.getCursorPosition();
@@ -298,6 +304,7 @@
             };
             // win/linux: Ctrl+Alt+2, mac: Command+Option+2
             var markdownToH2 = function(editor) {
+		console.log('markdownToH2');
                 var originalRange = editor.getSelectionRange();
                 if (editor.selection.isEmpty()) {
                     var curpos = editor.getCursorPosition();
@@ -318,6 +325,7 @@
             };
             // win/linux: Ctrl+Alt+3, mac: Command+Option+3
             var markdownToH3 = function(editor) {
+		console.log('markdownToH3');
                 var originalRange = editor.getSelectionRange();
                 if (editor.selection.isEmpty()) {
                     var curpos = editor.getCursorPosition();
@@ -338,6 +346,7 @@
             };
             // win/linux: Ctrl+Alt+P, mac: Command+Option+P
             var markdownToPre = function(editor) {
+		console.log('markdownToPre');
                 var originalRange = editor.getSelectionRange();
                 if (editor.selection.isEmpty()) {
                     var curpos = editor.getCursorPosition();
@@ -358,6 +367,7 @@
             };
             // win/linux: Ctrl+Alt+C, mac: Command+Option+C
             var markdownToCode = function(editor) {
+		console.log('markdownToCode');
                 var originalRange = editor.getSelectionRange();
                 if (editor.selection.isEmpty()) {
                     var curpos = editor.getCursorPosition();
@@ -375,6 +385,7 @@
             };
             // win/linux: Ctrl+Q, mac: Command+Q
             var markdownToBlockQuote = function(editor) {
+		console.log('markdownToBlockQuote');
                 var originalRange = editor.getSelectionRange();
                 if (editor.selection.isEmpty()) {
                     var curpos = editor.getCursorPosition();
@@ -395,6 +406,7 @@
             };
             // win/linux: Ctrl+U, mac: Command+U
             var markdownToUnorderedList = function(editor) {
+		console.log('markdownToUnorderedList');
                 var originalRange = editor.getSelectionRange();
                 if (editor.selection.isEmpty()) {
                     var curpos = editor.getCursorPosition();
@@ -415,6 +427,7 @@
             };
             // win/linux: Ctrl+Shift+O, mac: Command+Option+O
             var markdownToOrderedList = function(editor) {
+		console.log('markdownToOrderedList');
                 var originalRange = editor.getSelectionRange();
                 if (editor.selection.isEmpty()) {
                     var curpos = editor.getCursorPosition();
@@ -435,6 +448,7 @@
             };
             // win/linux: Ctrl+L, mac: Command+L
             var markdownToLink = function(editor) {
+		console.log('markdownToLink');
                 var originalRange = editor.getSelectionRange();
                 if (editor.selection.isEmpty()) {
                     var curpos = editor.getCursorPosition();
@@ -484,6 +498,7 @@
             };
             // win/linux: Ctrl+M, mac: Command+M
             var markdownToMention = function(editor) {
+		console.log('markdownToMention');
                 var originalRange = editor.getSelectionRange();
                 if (editor.selection.isEmpty()) {
                     var curpos = editor.getCursorPosition();
@@ -511,6 +526,7 @@
             // Markdown Image Uploader auto insert to editor.
             // with special insert, eg: ![avatar.png](i.imgur.com/DytfpTz.png)
             var markdownToUploadImage = function(editor) {
+		console.log('markdownToUploadImage');
                 console.log('Martor: Image upload');
                 var firstForm = $('#'+editorId).closest('form').get(0);
                 var field_name = editor.container.id.replace('martor-', '');
@@ -725,7 +741,7 @@
 
             // Custom decission for toolbar buttons.
             var btnMention = $('.markdown-direct-mention[data-field-name='+field_name+']'); // To Direct Mention
-            var btnUpload = $('.markdown-image-upload[data-field-name='+field_name+']'); // To Upload Image
+            var btnUpload = $('.markdown-image-upload[data-fieldname='+field_name+']'); // To Upload Image
             if (editorConfig.mention === 'true' && editorConfig.imgur === 'true') {
                 btnMention.click(function(){
                     markdownToMention(editor);
